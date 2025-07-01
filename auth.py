@@ -14,8 +14,8 @@ import base64
 load_dotenv()
 
 SECRET_KEY = os.getenv("SECRET_KEY")
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
+ALGORITHM = os.getenv("ALGORITHM")
+ACCESS_TOKEN_EXPIRE_MINUTES = os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES")
 
 # 비밀번호 해시 컨텍스트 (사용자 패스워드용)
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")

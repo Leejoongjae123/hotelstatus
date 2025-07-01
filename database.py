@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # 데이터베이스 연결 정보
-DATABASE_URL = "postgresql://hotelstatus:dlwndwo2!@34.81.137.138:5432/postgres"
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
